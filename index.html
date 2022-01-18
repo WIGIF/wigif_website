@@ -1,14 +1,135 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>WIGIF</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+  <meta charset="utf-8">
+  <title>WIGIF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.10.0/dist/css/uikit.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.0/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.0/dist/js/uikit-icons.min.js"></script>
 </head>
+
 <body>
-    <h1>Hello</h1>
+    <div id="app">
+    
+        <div class="uk-background-secondary uk-light uk-padding uk-panel" style="text-align: center">
+            <h1 class="uk-heading-line uk-text-center"><span>{{name}}</span></h1>
+        </div>
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-center boundary-align uk-background-secondary">
+        
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="#">Accueil</a></li>
+                    <li>
+                        <a href="#">Classement</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">Root-Me</a></li>
+                                <li><a href="#">CTF</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">News</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">Association</a></li>
+                                <li><a href="#">Flux RSS Futurama CyberGuerre</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Agenda</a></li>
+                    <li><a href="#">Workshop</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">A Venir</a></li>
+                                <li><a href="#">Sujets Workshop</a></li>
+                                <li><a href="#">Archives</a></li>
+                            </ul>
+                        </div>
+                    </li> 
+                </ul>
+        
+            </div>
+        </nav>
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-expand" uk-leader>Cotisations Membres</div>
+            <div>12.00€</div>
+        </div>
+        <button class="demo uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Bienvenue !!'})">Click me</button>
+        
+        <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-usage">Open</button>
+
+        <div id="offcanvas-usage" uk-offcanvas>
+        <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h3>WIGIF</h3>
+                <p>Salut</p>
+            </div>
+        </div>
+
+        <div id="test-filter" class="uk-height-large uk-background-cover uk-overflow-hidden uk-flex uk-flex-top" uk-parallax="sepia: 100;" style="background-image: url('images/logo.png');">
+
+            <h1 class="uk-heading-xlarge uk-text-center uk-margin-auto uk-margin-auto-vertical uk-text-secondary" uk-parallax="target: #test-filter; blur: 0,10;"><span>WIGIF</span></h1>
+        
+        </div>  
+        <div>
+            <ul>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+                <li>coucou</li>
+            </ul>
+        </div>
+        <div class="uk-text-center">
+            <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
+                <img src="images/digital.jpg" alt="" width="700" height="700">
+                <div class="uk-position-center">
+                    <div class="uk-transition-slide-top-medium"><h4 class="uk-margin-remove uk-heading-large"><a href="images/digital.jpg">Workshops</a></h4></div>
+                </div>
+            </div>
+        </div>
+        <div><h4>Prochain Worshop dans :</h4></div>
+        <div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: 2022-01-18T18:00:00+01:00">
+            <div>
+                <div class="uk-countdown-number uk-countdown-days"></div>
+                <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+            </div>
+            <div class="uk-countdown-separator">:</div>
+            <div>
+                <div class="uk-countdown-number uk-countdown-hours"></div>
+                <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+            </div>
+            <div class="uk-countdown-separator">:</div>
+            <div>
+                <div class="uk-countdown-number uk-countdown-minutes"></div>
+                <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+            </div>
+            <div class="uk-countdown-separator">:</div>
+            <div>
+                <div class="uk-countdown-number uk-countdown-seconds"></div>
+                <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el : "#app",
+            data : {
+                name: "WIGIF"
+            }
+        })
+    </script>
 </body>
 </html>

@@ -6,9 +6,9 @@
     <title>WIGIF</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
-<body>
+<body id="app">
     <h1>Hello</h1>
 </body>
 </html>

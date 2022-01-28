@@ -1,7 +1,6 @@
 <template>
     <div class="list-subject">
         <li><button class="uk-button uk-button-text" uk-toggle="target: #modal-example" @click="popup">{{ label }}</button></li>
-        <slot></slot>
     </div>
 </template>
 
@@ -23,7 +22,7 @@ export default {
     },
     methods: {
         popup() {
-            this.$emit('click', {message: this.label, option: this.text, link: this.link})
+            this.$emit('receive', {message: this.label, option: this.text, link: this.link})
             console.log(this.label + "je suis là" + this.text + this.link)
         }
     }

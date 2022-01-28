@@ -1,9 +1,11 @@
 <template>
 	<Headers msg="WIGIF"/>
+	
 	<div class="uk-dark uk-padding uk-panel" style="text-align: center">
 		<h1 class="uk-heading-line uk-text-center"><span>Prochain Workshop</span></h1>
 	</div>
-	<div class="uk-gridsmall uk-child-width-auto uk-flex uk-flex-center" uk-grid uk-countdown="date: 2022-01-26T18:00">
+	
+	<div class="uk-gridsmall uk-child-width-auto uk-flex uk-flex-center" uk-grid uk-countdown="date: 2022-01-31T18:00">
 		<div>
 			<div class="uk-countdown-number uk-countdown-days"></div>
 			<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
@@ -24,9 +26,18 @@
 			<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
 		</div>
 	</div>
-	<WorkshopTemplate :listWork="newSubject" title="Workshop A Venir"/>
-	<WorkshopTemplate :listWork="lastSubject" title="Historique Workshop"/>
-
+	
+	<WorkshopTemplate :listWork="newSubject" title="Workshop A Venir" @receive="displayPopUp"/>
+	<WorkshopTemplate :listWork="lastSubject" title="Historique Workshop" @receive="displayPopUp"/>
+	
+	<div id="modal-example" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <button class="uk-modal-close-default" type="button" uk-close @click="refresh"></button>
+            <h2 class="uk-modal-title">{{ label1 }}</h2>
+            <p>{{ text1 }}</p><br>
+            <a class="uk-link-text" :href="link1">Ressource Associée</a>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -75,8 +86,22 @@ export default {
 				label: 'Coder de la Musique 🎶',
 				text: 'Découverte d\'un logiciel permettant de coder de la Musique.',
 				link: ''
-			}]
+			}],
+			label1: '',
+            text1: '',
+            link1: ''
 		}
-	}
+	},
+	methods: {
+        displayPopUp(payload) {
+			this.label1 = payload.message,
+            this.text1 = payload.option,
+            this.link1 = payload.link,
+            console.log("POP UP" + payload.message + payload.option + this.label1)
+        },
+		refresh() {
+			this.$router.go()
+		}
+    } 
 }
 </script>

@@ -10,17 +10,9 @@
                 :label="item.label"
                 :text="item.text"
                 :link="item.link"
-                :key="item.label" 
-                @receive="displayPopUp"></ListSubject>
+                :key="item.label"
+                @receive="pop"></ListSubject>
             </ul>
-        </div>
-        <div id="modal-example" uk-modal>
-            <div class="uk-modal-dialog uk-modal-body">
-                <button class="uk-modal-close-default" type="button" uk-close></button>
-                <h2 class="uk-modal-title">{{ label1 }}</h2>
-                <p>{{ text1 }}</p><br>
-                <a class="uk-link-text" :href="link1">Ressource Associée</a>
-            </div>
         </div>
     </div>
 </template>
@@ -37,8 +29,7 @@ export default {
         return {
             label1: '',
             text1: '',
-            link1: '',
-            //count: 1
+            link1: ''
         }
     },
     props: {
@@ -52,15 +43,8 @@ export default {
         }
     },
     methods: {
-        displayPopUp(payload) {
-            //this.count ++
-            //var remain = this.count % 2
-            //if(Math.floor(remain >= 0 ? remain : remain + 2) === 0){ //Opération Modulo en Javascript
-            this.label1 = payload.message,
-            this.text1 = payload.option,
-            this.link1 = payload.link,
-            console.log("POP UP" + payload.message + payload.option + this.label1)
-            //}
+        pop(item) {
+            this.$emit('receive', item)
         }
     }  
 }

@@ -23,7 +23,6 @@ export default {
     methods: {
         popup() {
             this.$emit('receive', {message: this.label, option: this.text, link: this.link})
-            console.log(this.label + "je suis là" + this.text + this.link)
         }
     }
 }

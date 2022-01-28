@@ -1,11 +1,23 @@
 <template>
   <Headers msg="WIGIF"/>
+
   <h1 class="uk-heading-medium uk-flex uk-flex-center">Les H@ck3rs de Kalité</h1>
   <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  
   <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
-    <WorkshopTemplate :listWork="newSubject" title="Workshop A Venir"/>
-    <WorkshopTemplate :listWork="lastSubject" title="Historique Workshop"/>
+    <WorkshopTemplate :listWork="newSubject" title="Workshop A Venir" @receive="displayPopUp"/>
+    <WorkshopTemplate :listWork="lastSubject" title="Historique Workshop" @receive="displayPopUp"/>
+    
+    <div id="modal-example" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close @click="refresh"></button>
+        <h2 class="uk-modal-title">{{ label1 }}</h2>
+        <p>{{ text1 }}</p><br>
+        <a class="uk-link-text" :href="link1">Ressource Associée</a>
+      </div>
+    </div>
   </div>
+  
   <br><br>
   <div class="uk-background-secondary uk-light uk-padding uk-panel" style="text-align: center"></div>
 </template>
@@ -51,8 +63,21 @@ export default {
       {
         label: 'Coder de la Musique 🎶',
         text: 'Découverte d\'un logiciel permettant de coder de la Musique.'
-      }]
+      }],
+			label1: '',
+      text1: '',
+      link1: ''
+		}
+	},
+	methods: {
+    displayPopUp(payload) {
+			this.label1 = payload.message,
+      this.text1 = payload.option,
+      this.link1 = payload.link
+    },
+    refresh() {
+      this.$router.go()
     }
-  }
+  } 
 }
 </script>

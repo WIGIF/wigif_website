@@ -10,8 +10,7 @@
                 :label="item.label"
                 :text="item.text"
                 :link="item.link"
-                :key="item.label"
-                @receive="pop"></ListSubject>
+                :key="item.label"></ListSubject>
             </ul>
         </div>
     </div>
@@ -41,11 +40,6 @@ export default {
             type: Array,
             required: true
         }
-    },
-    methods: {
-        pop(item) {
-            this.$emit('receive', item)
-        }
-    }  
+    }
 }
 </script>

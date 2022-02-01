@@ -27,17 +27,9 @@
 		</div>
 	</div>
 	
-	<WorkshopTemplate :listWork="newSubject" title="Workshop A Venir" @receive="displayPopUp"/>
-	<WorkshopTemplate :listWork="lastSubject" title="Historique Workshop" @receive="displayPopUp"/>
-	
-	<div id="modal-example" uk-modal>
-        <div class="uk-modal-dialog uk-modal-body">
-            <button class="uk-modal-close-default" type="button" uk-close @click="refresh"></button>
-            <h2 class="uk-modal-title">{{ label1 }}</h2>
-            <p>{{ text1 }}</p><br>
-            <a class="uk-link-text" :href="link1">Ressource Associée</a>
-        </div>
-    </div>
+	<WorkshopTemplate :listWork="newSubject" title="Workshop A Venir"/>
+	<WorkshopTemplate :listWork="lastSubject" title="Historique Workshop"/>
+
 </template>
 
 <script>
@@ -86,19 +78,10 @@ export default {
 				label: 'Coder de la Musique 🎶',
 				text: 'Découverte d\'un logiciel permettant de coder de la Musique.',
 				link: ''
-			}],
-			label1: '',
-            text1: '',
-            link1: ''
+			}]
 		}
 	},
 	methods: {
-        displayPopUp(payload) {
-			this.label1 = payload.message,
-            this.text1 = payload.option,
-            this.link1 = payload.link,
-            console.log("POP UP" + payload.message + payload.option + this.label1)
-        },
 		refresh() {
 			this.$router.go()
 		}

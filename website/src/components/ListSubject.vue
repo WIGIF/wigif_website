@@ -1,6 +1,14 @@
 <template>
     <div class="list-subject">
-        <li><button class="uk-button uk-button-text" uk-toggle="target: #modal-example" @click="popup">{{ label }}</button></li>
+        <li><button class="uk-button uk-button-text" :uk-toggle="target">{{ label }}</button></li>
+    </div>
+    <div :id="id" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">{{ label }}</h2>
+        <p>{{ text }}</p><br>
+        <a class="uk-link-text" :href="link">Ressource Associée</a>
+      </div>
     </div>
 </template>
 
@@ -18,11 +26,12 @@ export default {
         },
         link: {
             type: String
-        }
+        },
     },
-    methods: {
-        popup() {
-            this.$emit('receive', {message: this.label, option: this.text, link: this.link})
+    data(){
+        return{
+            id : "modal-example-"+this.label.toLowerCase().split(" ").join(""),
+            target : "target: #modal-example-"+this.label.toLowerCase().split(" ").join("")
         }
     }
 }

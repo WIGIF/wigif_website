@@ -1,7 +1,7 @@
 <template>
   <Headers msg="WIGIF"/>
 
-	<div class="uk-align-center uk-width-1-2@m uk-position-center">
+	<div class="uk-align-center uk-width-1-2@m">
         <div class="uk-card uk-card-default uk-card-large uk-card-body">
             <h3 class="uk-card-title uk-text-center">Login</h3>
             <form class="uk-form">
@@ -15,12 +15,12 @@
 				</div>	
 				<div style="display: flex;justify-content: center;">
 						<div class="uk-inline">
-							<span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-							<input class="uk-input" type="text">
+							<button class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock" type="password" @click="switchVisible"></button>
+							<input :type="passwordFieldType" v-model="password" class="uk-input">
 						</div>
 				</div>
 			</form>
-			<button class="uk-button uk-button-default uk-align-center">Connexion</button>
+			<button class="uk-button uk-button-default uk-align-center" v-on:click="showAlert">Connexion</button>
 			<p class="uk-text-center">Si vous n'avez pas encore de compte, veuillez-vous rapprocher de membres de l'assocation.</p>
         </div>
     </div>
@@ -29,11 +29,26 @@
 
 <script>
 import Headers from '../components/Headers.vue'
+import UIkit from '../uikit-webpack/node_modules/uikit';
 
 export default {
 	name: "WIGIF",
 	components: {
 		Headers
+	},
+	data () {
+		return{
+			password: "",
+			passwordFieldType: "password"
+		}
+	},
+	methods:{
+		showAlert(){
+			UIkit.notification({message: 'ALERT : Erreur de Login'})
+		},
+		switchVisible(){
+			this.passwordFieldType = this.passwordFieldType === "password" ? "text" : "password";
+		}
 	}
 }
 </script>

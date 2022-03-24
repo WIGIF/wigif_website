@@ -5,7 +5,7 @@
 		<h1 class="uk-heading-line uk-text-center"><span>Prochain Workshop</span></h1>
 	</div>
 	
-	<div class="uk-gridsmall uk-child-width-auto uk-flex uk-flex-center" uk-grid uk-countdown="date: 2022-01-31T18:00">
+	<div class="uk-gridsmall uk-child-width-auto uk-flex uk-flex-center" uk-grid uk-countdown="date: 2022-03-29T18:00">
 		<div>
 			<div class="uk-countdown-number uk-countdown-days"></div>
 			<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
@@ -30,6 +30,7 @@
 	<WorkshopTemplate :listWork="newSubject" title="Workshop A Venir"/>
 	<WorkshopTemplate :listWork="lastSubject" title="Historique Workshop"/>
 
+	<div class="uk-background-secondary uk-light uk-padding uk-panel" style="text-align: center">©WIGIF</div>
 </template>
 
 <script>
@@ -46,18 +47,15 @@ export default {
 		return {
 			newSubject: [{
 				label: 'Assembleur II 💻',
-				text: 'AA',
-				link: ''
+				text: 'Prochainement !! Nous vous attendons avec impatience !!'
 			},
 			{
-				label: 'Cryptographie I 🔑',
-				text: 'AA',
-				link: ''
+				label: 'Introduction aux injections SQL 💉',
+				text: 'Prochainement !! Nous vous attendons avec impatience !!'
 			},
 			{
 				label: 'Découvrir BurpSuite 👨‍💻',
-				text: 'AA',
-				link: ''
+				text: 'Prochainement !! Nous vous attendons avec impatience !!'
 			}],
 			lastSubject: [ {
 				label:'Outils de Bases sous Kali ⚙',
@@ -71,13 +69,21 @@ export default {
 			},
 			{
 				label:'Découvrir GIT 📁',
-				text: 'AA',
-				link: ''
+				text: 'Historique de GIT et découverte de Github.',
+				link: 'gitdiapo.pdf'
 			},
 			{
 				label: 'Coder de la Musique 🎶',
-				text: 'Découverte d\'un logiciel permettant de coder de la Musique.',
-				link: ''
+				text: 'Découverte d\'un logiciel permettant de coder de la Musique.'
+			},
+			{
+				label: 'Présentation de Tic-Tools ⚙',
+				text: 'Présentation des objectifs du projet Tick-Tools et proposition d\' idée d\'amélioration de l\'outil.'
+			},
+			{
+				label: 'Cryptographie I 🔑',
+				text: 'Première approche de la cryptographie via RSA. Découverte de la mécanique de chiffrement et Attaque par Factorisation de clés RSA.',
+				link: 'Cryptanalyse_I.pdf'
 			}]
 		}
 	},

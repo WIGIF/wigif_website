@@ -16,7 +16,7 @@
                     <button class="uk-offcanvas-close" type="button" uk-close></button>
                     <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
                         <li><router-link to="/">Accueil</router-link></li>
-                        <li><router-link to="/classement">Classement</router-link></li>
+                        <li><router-link to="/classement">Classement & CTFs</router-link></li>
                         <li><router-link to="/news">News</router-link></li>
                         <li><router-link to="/agenda">Agenda</router-link></li>
                         <li><router-link to="/workshop">Workshop</router-link></li> 

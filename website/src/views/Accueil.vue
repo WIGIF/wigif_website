@@ -2,14 +2,17 @@
   <Headers msg="WIGIF"/>
 
   <h1 class="uk-heading-medium uk-flex uk-flex-center">Les H@ck3rs de Kalité</h1>
-  <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p style="text-align: center">
+  WIGIF (Where I Go I Flag) est une association étudiante qui a pour but de partager les bases de la cybersécurité aux étudiants du parcours préparatoire de l'ENSIBS (Ecole Nationale Supérieure d'Ingénieur Bretagne Sud)
+. <br>Sur ce site vous pourrez trouvez les différents ateliers à venir et passés, les news de l'association, le classements Root-Me des membres de l'association, ainsi qu'un agenda des prochain CTFs (Capture The Flag). 
+<br>~Keep Pwn </p>
   
   <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
     <WorkshopTemplate :listWork="newSubject" title="Workshop A Venir"/>
     <WorkshopTemplate :listWork="lastSubject" title="Historique Workshop"/>
   </div>
   <br><br>
-  <div class="uk-background-secondary uk-light uk-padding uk-panel" style="text-align: center"></div>
+  <div class="uk-background-secondary uk-light uk-padding uk-panel" style="text-align: center">©WIGIF</div>
 </template>
 
 <script>
@@ -26,15 +29,15 @@ export default {
     return {
       newSubject: [{
         label: 'Assembleur II 💻',
-        text: 'AA'
+        text: 'Prochainement !! Nous vous attendons avec impatience !!'
       },
       {
-        label: 'Cryptographie I 🔑',
-        text: 'AA'
+        label: 'Introduction aux injections SQL 💉',
+        text: 'Prochainement !! Nous vous attendons avec impatience !!'
       },
       {
         label: 'Découvrir BurpSuite 👨‍💻',
-        text: 'AA'
+        text: 'Prochainement !! Nous vous attendons avec impatience !!'
       }],
       lastSubject: [ {
         label:'Outils de Bases sous Kali ⚙',
@@ -48,12 +51,23 @@ export default {
       },
       {
         label:'Découvrir GIT 📁',
-        text: 'AA'
+        text: 'Historique de GIT et découverte de Github.',
+        link: 'gitdiapo.pdf'
       },
       {
         label: 'Coder de la Musique 🎶',
         text: 'Découverte d\'un logiciel permettant de coder de la Musique.'
-      }]
+      },
+      {
+        label: 'Présentation de Tic-Tools ⚙',
+        text: 'Présentation des objectifs du projet Tick-Tools et proposition d\' idée d\'amélioration de l\'outil.'
+      },
+      {
+        label: 'Cryptographie I 🔑',
+        text: 'Première approche de la cryptographie via RSA. Découverte de la mécanique de chiffrement et Attaque par Factorisation de clés RSA.',
+        link: 'Cryptanalyse_I.pdf'
+      },
+      ]
 		}
 	},
 	methods: {

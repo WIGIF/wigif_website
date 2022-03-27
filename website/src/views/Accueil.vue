@@ -6,7 +6,12 @@
   WIGIF (Where I Go I Flag) est une association étudiante qui a pour but de partager les bases de la cybersécurité aux étudiants du parcours préparatoire de l'ENSIBS (Ecole Nationale Supérieure d'Ingénieur Bretagne Sud)
 . <br>Sur ce site vous pourrez trouvez les différents ateliers à venir et passés, les news de l'association, le classements Root-Me des membres de l'association, ainsi qu'un agenda des prochain CTFs (Capture The Flag). 
 <br>~Keep Pwn </p>
-  
+
+<div class="uk-flex-center uk-flex">
+  <img src="Transparent_Logo.svg" alt="" loading="lazy" width="400" height="400">
+</div>
+
+
   <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
     <WorkshopTemplate :listWork="newSubject" title="Workshop A Venir"/>
     <WorkshopTemplate :listWork="lastSubject" title="Historique Workshop"/>

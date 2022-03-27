@@ -20,9 +20,11 @@
                         <li><router-link to="/news">News</router-link></li>
                         <li><router-link to="/agenda">Agenda</router-link></li>
                         <li><router-link to="/workshop">Workshop</router-link></li> 
+                        <li><router-link to="/contact">Contact</router-link></li> 
                     </ul>
             </div>
         </div>
+        
     </div>
 </template>
 
